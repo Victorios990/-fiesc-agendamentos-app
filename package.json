@@ -1,0 +1,12 @@
+{
+    "name": "fiesc-agendamentos",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev:all": "docker compose up --build & npx wait-on http://localhost:5173 && npx cypress open"
+    },
+    "devDependencies": {
+        "start-server-and-test": "^2.0.0",
+        "wait-on": "^7.0.1"
+    }
+}
