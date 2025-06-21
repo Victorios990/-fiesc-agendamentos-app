@@ -1,4 +1,4 @@
-import { Agendamento } from '../models/Agendamento.js'
+import { Agendamento } from '../Models/Agendamento.js'
 
 export const listar = () => Agendamento.findAll()
 export const criar = (dados) => Agendamento.create(dados)

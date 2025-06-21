@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { body, validationResult } from 'express-validator'
-import * as AgendamentoController from '../controllers/AgendamentoController.js'
+import * as AgendamentoController from '../Controllers/AgendamentoController.js'
 
 const router = Router()
 
