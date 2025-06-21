@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import agendamentoRoutes from './agendamentos.js'
+import agendamentoRoutes from './Agendamentos.js'
 
 const router = Router()
 router.use('/agendamentos', agendamentoRoutes)

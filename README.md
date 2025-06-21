@@ -31,8 +31,13 @@ cd -fiesc-agendamentos-app
 
 ### 3. Subindo com Docker
 
-```bash
+```bash         >>>>>>>> Deve ser Ajustado
 docker compose up --build
+
+cd /Users/victor/Documents/WorkSpaces/fiesc-agendamentos-app.git/-fiesc-agendamentos-app
+docker compose up --build
+
+
 ```
 
 A aplicação estará disponível em:

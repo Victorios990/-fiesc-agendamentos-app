@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize'
-import { sequelize } from '../utils/db.js'
+import { sequelize } from '../Config/Db.js'
 
 export const Agendamento = sequelize.define('Agendamento', {
   nome: { type: DataTypes.STRING, allowNull: false },
