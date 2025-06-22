@@ -1,7 +1,7 @@
 {
   "name": "agendamentos-api",
   "version": "1.0.0",
-  "main": "src/server.js",
+  "main": "src/Server.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon src/Server.js"
