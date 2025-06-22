@@ -1,22 +1,14 @@
 # Etapa de build
-FROM node:18 AS builder
-
+FROM node:18 as builder
 WORKDIR /app
-
 COPY . .
-
 RUN npm install
-RUN npm run build:ssr
+RUN npm run build
 
-# Etapa de produção
-FROM node:18-alpine
-
+# Etapa final para servir
+FROM node:18 as runner
 WORKDIR /app
-
 COPY --from=builder /app/dist /app/dist
-COPY --from=builder /app/node_modules /app/node_modules
-COPY --from=builder /app/package.json /app/
-
+RUN npm install -g serve
 EXPOSE 4000
-
-CMD ["node", "dist/server/main.js"]
+CMD ["serve", "-s", "dist", "-l", "4000"]

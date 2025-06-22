@@ -1,0 +1,22 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@angular/cli": "^20.0.3",
+    "@angular/common": "^20.0.4",
+    "@angular/core": "^20.0.4",
+    "@angular/platform-browser": "^20.0.4",
+    "@angular/platform-browser-dynamic": "^20.0.4",
+    "rxjs": "^7.8.2",
+    "typescript": "^5.8.3",
+    "zone.js": "^0.15.1"
+  }
+}
