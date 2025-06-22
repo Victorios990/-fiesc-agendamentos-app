@@ -1,8 +1,8 @@
-# -fiesc-agendamentos-app
+# -agendamentos-app
 
-# AgendaFIESC – Sistema de Agendamento de Atendimentos
+# Sistema de Agendamento de Atendimentos
 
-Projeto desenvolvido para o processo seletivo da FIESC / SESC, com foco em automação de testes e desenvolvimento de aplicações web utilizando tecnologias modernas.
+Projeto desenvolvido com foco em automação de testes e desenvolvimento de aplicações web utilizando tecnologias modernas.
 
 ## Tecnologias Utilizadas
 
@@ -25,8 +25,8 @@ Projeto desenvolvido para o processo seletivo da FIESC / SESC, com foco em autom
 ### 2. Clonando o repositório
 
 ```bash
-git clone https://github.com/Victorios990/-fiesc-agendamentos-app.git
-cd -fiesc-agendamentos-app
+git clone https://github.com/Victorios990/agendamentos-app.git
+cd -agendamentos-app
 ```
 
 ### 3. Subindo com Docker
@@ -34,7 +34,7 @@ cd -fiesc-agendamentos-app
 ```bash         >>>>>>>> Deve ser Ajustado
 docker compose up --build
 
-cd /Users/victor/Documents/WorkSpaces/fiesc-agendamentos-app.git/-fiesc-agendamentos-app
+cd /Users/victor/Documents/WorkSpaces/agendamentos-app.git/-agendamentos-app
 docker compose up --build
 
 
