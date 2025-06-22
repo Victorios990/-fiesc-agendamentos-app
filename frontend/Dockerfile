@@ -1,14 +1,22 @@
-# frontend/Dockerfile
-FROM node:18
+# Etapa de build
+FROM node:18 AS builder
 
 WORKDIR /app
 
-COPY package*.json ./
-
-RUN npm install
-
 COPY . .
 
-EXPOSE 5173
+RUN npm install
+RUN npm run build:ssr
 
-CMD ["npm", "run", "dev"]
+# Etapa de produção
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY --from=builder /app/dist /app/dist
+COPY --from=builder /app/node_modules /app/node_modules
+COPY --from=builder /app/package.json /app/
+
+EXPOSE 4000
+
+CMD ["node", "dist/server/main.js"]
