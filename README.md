@@ -1,4 +1,4 @@
-# -agendamentos-app
+# agendamentosAPP
 
 # Sistema de Agendamento de Atendimentos
 
@@ -6,7 +6,7 @@ Projeto desenvolvido com foco em automação de testes e desenvolvimento de apli
 
 ## Tecnologias Utilizadas
 
-- **Frontend**: HTML + JavaScript (Vite)
+- **Frontend**: Angular 17 + SSR (Server-Side Rendering)
 - **Backend**: Node.js + Express
 - **Banco de Dados**: PostgreSQL
 - **Containerização**: Docker + Docker Compose
@@ -25,26 +25,23 @@ Projeto desenvolvido com foco em automação de testes e desenvolvimento de apli
 ### 2. Clonando o repositório
 
 ```bash
-git clone https://github.com/Victorios990/agendamentos-app.git
-cd -agendamentos-app
+git clone https://github.com/Victorios990/agendamentosAPP.git
+cd agendamentosAPP
+
 ```
 
 ### 3. Subindo com Docker
 
-```bash         >>>>>>>> Deve ser Ajustado
+```bash 
 docker compose up --build
-
-cd /Users/victor/Documents/WorkSpaces/agendamentos-app.git/-agendamentos-app
-docker compose up --build
-
 
 ```
 
 A aplicação estará disponível em:
 
-- Frontend: http://localhost:5173  
+- Frontend: http://localhost:4200  
 - Backend (API): http://localhost:3000  
-- Banco de dados (PostgreSQL): porta 5432
+- Banco de Dados (PostgreSQL): porta 5432
 
 ---
 
@@ -108,15 +105,14 @@ cypress/e2e/agendamento.cy.js
 ```
 .
 ├── backend/                # API Node.js + Express
-│   └── ...                
-├── frontend/               # Frontend com Vite
-│   └── index.html
-│   └── main.js
+├── frontend/               # Frontend Angular + SSR
 ├── cypress/                # Testes automatizados
 │   └── e2e/
 │       └── agendamento.cy.js
+├── docs/                   # Documentação de requisitos, histórias, etc
 ├── docker-compose.yml      # Orquestração com Docker
 └── README.md               # Documentação do projeto
+
 ```
 ---
 
@@ -131,6 +127,6 @@ cypress/e2e/agendamento.cy.js
 
 José Victor C. L. de Almeida  
 [LinkedIn](https://www.linkedin.com/in/victoralmeidaqa/)  
-[GitHub](https://github.com/Victorios990/-fiesc-agendamentos-app#)
+[GitHub](https://github.com/Victorios990/agendamentosAPP)
 
 ---
