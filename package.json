@@ -1,13 +1,15 @@
 {
-    "name": "fiesc-agendamentos",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-        "dev:all": "docker compose up --build & npx wait-on http://localhost:5173 && npx cypress open",
-        "build:ssr": "cd frontend && npm run build:ssr"
-    },
-    "devDependencies": {
-        "start-server-and-test": "^2.0.0",
-        "wait-on": "^7.0.1"
-    }
+  "name": "agendamentos-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:all": "docker compose up --build & npx wait-on http://localhost:5173 && npx cypress open",
+    "build:ssr": "cd frontend && npm run build:ssr",
+    "serve:ssr": "cd frontend && npm run serve:ssr",
+    "preview": "cd frontend && npm run preview"
+  },
+  "devDependencies": {
+    "start-server-and-test": "^2.0.0",
+    "wait-on": "^7.0.1"
+  }
 }

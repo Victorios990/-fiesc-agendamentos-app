@@ -1,7 +1,9 @@
-import { AppServerModule } from './app/app.server.module';
+import { enableProdMode } from '@angular/core';
 import { environment } from './environments/environment';
-import { bootstrapApplication } from '@angular/platform-server';
 
-bootstrapApplication(AppServerModule, {
-  providers: [],
-}).catch((err) => console.error(err));
+if (environment.production) {
+  enableProdMode();
+}
+
+// Este arquivo apenas serve para exportar o AppServerModule para o server.ts
+export { AppServerModule } from './app/app.server.module';
