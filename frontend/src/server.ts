@@ -1,68 +1,42 @@
-import {
-  AngularNodeAppEngine,
-  createNodeRequestHandler,
-  isMainModule,
-  writeResponseToNodeResponse,
-} from '@angular/ssr/node';
+import 'zone.js/node';
 import express from 'express';
-import { join } from 'node:path';
+import { join } from 'path';
+import { existsSync } from 'fs';
+import { AppServerModule } from './main.server';
 
-const browserDistFolder = join(import.meta.dirname, '../browser');
+const DIST_FOLDER = join(process.cwd(), 'dist/frontend-app/browser');
 
-const app = express();
-const angularApp = new AngularNodeAppEngine();
+function app(): express.Express {
+  const server = express();
 
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/{*splat}', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
+  server.use(express.static(DIST_FOLDER, {
+    maxAge: '1y'
+  }));
 
-/**
- * Serve static files from /browser
- */
-app.use(
-  express.static(browserDistFolder, {
-    maxAge: '1y',
-    index: false,
-    redirect: false,
-  }),
-);
+  server.get('*', async (req, res) => {
+    const { renderModule } = await import('@angular/platform-server');
+    const { AppServerModule } = await import('./main.server');
 
-/**
- * Handle all other requests by rendering the Angular application.
- */
-app.use((req, res, next) => {
-  angularApp
-    .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
-    .catch(next);
-});
+    const { readFile } = await import('fs/promises');
+    const indexHtml = await readFile(join(DIST_FOLDER, 'index.html'), 'utf-8');
 
-/**
- * Start the server if this module is the main entry point.
- * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
- */
-if (isMainModule(import.meta.url)) {
-  const port = process.env['PORT'] || 4000;
-  app.listen(port, (error) => {
-    if (error) {
-      throw error;
-    }
+    renderModule(AppServerModule, {
+      document: indexHtml,
+      url: req.url,
+    }).then(html => {
+      res.status(200).send(html);
+    });
+  });
 
-    console.log(`Node Express server listening on http://localhost:${port}`);
+  return server;
+}
+
+function run(): void {
+  const port = process.env.PORT || 4000;
+  const server = app();
+  server.listen(port, () => {
+    console.log(`✅ Angular SSR rodando em: http://localhost:${port}`);
   });
 }
 
-/**
- * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
- */
-export const reqHandler = createNodeRequestHandler(app);
+run();

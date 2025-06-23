@@ -1,22 +1,41 @@
 {
-  "name": "frontend",
+  "name": "frontend-app",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:ssr": "ng build --output-hashing=none && ng run frontend-app:server",
+    "serve:ssr": "node dist/frontend-app/server/main.js",
+    "preview": "npm run build:ssr && npm run serve:ssr",
+    "test": "ng test",
+    "lint": "ng lint"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@angular/cli": "^20.0.3",
+    "@angular/animations": "^20.0.4",
     "@angular/common": "^20.0.4",
+    "@angular/compiler": "^20.0.4",
     "@angular/core": "^20.0.4",
+    "@angular/forms": "^20.0.4",
     "@angular/platform-browser": "^20.0.4",
     "@angular/platform-browser-dynamic": "^20.0.4",
+    "@angular/platform-server": "^20.0.4",
+    "@angular/router": "^20.0.4",
     "rxjs": "^7.8.2",
-    "typescript": "^5.8.3",
     "zone.js": "^0.15.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^20.0.3",
+    "@angular/cli": "^20.0.3",
+    "@angular/compiler-cli": "^20.0.4",
+    "@types/jasmine": "~4.3.0",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.2",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.8.0"
   }
 }

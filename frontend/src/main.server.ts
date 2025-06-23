@@ -1,7 +1,7 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { App } from './app/app';
-import { config } from './app/app.config.server';
+import { AppServerModule } from './app/app.server.module';
+import { environment } from './environments/environment';
+import { bootstrapApplication } from '@angular/platform-server';
 
-const bootstrap = () => bootstrapApplication(App, config);
-
-export default bootstrap;
+bootstrapApplication(AppServerModule, {
+  providers: [],
+}).catch((err) => console.error(err));
