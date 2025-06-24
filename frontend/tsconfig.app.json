@@ -1,3 +1,4 @@
+// frontend/tsconfig.app.json
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
@@ -8,7 +9,10 @@
     "src/main.ts"
   ],
   "include": [
-    "src/**/*.d.ts",
     "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
   ]
 }
