@@ -1,0 +1,1 @@
+{"ast":null,"code":"\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.serverRoutes = void 0;\nconst ssr_1 = require(\"@angular/ssr\");\nexports.serverRoutes = [{\n  path: '**',\n  renderMode: ssr_1.RenderMode.Prerender\n}];","map":null,"metadata":{},"sourceType":"script","externalDependencies":[]}

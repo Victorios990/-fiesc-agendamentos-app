@@ -1,3 +1,4 @@
+// frontend/src/main.server.ts
 import { enableProdMode } from '@angular/core';
 import { environment } from './environments/environment';
 
@@ -5,5 +6,5 @@ if (environment.production) {
   enableProdMode();
 }
 
-// Este arquivo apenas serve para exportar o AppServerModule para o server.ts
+// Exporta a factory function do AppServerModule
 export { AppServerModule } from './app/app.server.module';
