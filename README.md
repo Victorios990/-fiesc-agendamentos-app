@@ -1,132 +1,104 @@
-# agendamentosAPP
+Sistema de Agendamento de Atendimentos
+Projeto desenvolvido com foco em organização, automação de testes e desenvolvimento de aplicações web utilizando tecnologias modernas.
 
-# Sistema de Agendamento de Atendimentos
+🚀 Tecnologias Utilizadas
+Frontend: Angular 17 + SSR (Server-Side Rendering)
 
-Projeto desenvolvido com foco em automação de testes e desenvolvimento de aplicações web utilizando tecnologias modernas.
+Backend: Node.js + Express
 
-## Tecnologias Utilizadas
+Banco de Dados: PostgreSQL
 
-- **Frontend**: Angular 17 + SSR (Server-Side Rendering)
-- **Backend**: Node.js + Express
-- **Banco de Dados**: PostgreSQL
-- **Containerização**: Docker + Docker Compose
-- **Testes E2E**: Cypress
+Containerização: Docker + Docker Compose
 
----
+Testes E2E: Cypress
 
-## Como Executar o Projeto
+⚙️ Como Executar o Projeto
+1. Pré-requisitos
+Docker e Docker Compose instalados
 
-### 1. Pré-requisitos
+Node.js e npm (opcional, apenas para uso local)
 
-- Docker instalado
-- Node.js e npm instalados (opcional, apenas para uso local sem Docker)
-- Git
+Git
 
-### 2. Clonando o repositório
-
-```bash
+2. Clonando o repositório
+bash
+Copiar
+Editar
 git clone https://github.com/Victorios990/agendamentosAPP.git
 cd agendamentosAPP
-
-```
-
-### 3. Subindo com Docker
-
-```bash 
+3. Subindo com Docker
+bash
+Copiar
+Editar
 docker compose up --build
+Após a inicialização, acesse:
 
-```
+🌐 Frontend: http://localhost:4200
 
-A aplicação estará disponível em:
+📦 Backend (API): http://localhost:3000
 
-- Frontend: http://localhost:4200  
-- Backend (API): http://localhost:3000  
-- Banco de Dados (PostgreSQL): porta 5432
+🗄️ Banco de Dados (PostgreSQL): porta 5432
 
----
-
-## Endpoints da API
-
-### `GET /api/agendamentos`
-
+📌 Endpoints da API
+GET /api/agendamentos
 Retorna a lista de agendamentos cadastrados.
 
-### `POST /api/agendamentos`
-
+POST /api/agendamentos
 Cria um novo agendamento.
 
-### `PUT /api/agendamentos/:id`
-
+PUT /api/agendamentos/:id
 Atualiza os dados de um agendamento existente.
 
-### `DELETE /api/agendamentos/:id`
-
+DELETE /api/agendamentos/:id
 Remove um agendamento pelo ID.
 
-**Body esperado (JSON):**
+Exemplo de body (JSON):
 
-```json
+json
+Copiar
+Editar
 {
   "nome": "Maria",
   "servico": "Orientação Profissional",
   "data": "2025-06-25",
   "horario": "10:00"
 }
-```
+🧪 Executando os Testes E2E com Cypress
+Com a aplicação rodando (docker compose up), em outro terminal execute:
 
----
-
-## Executando os Testes E2E com Cypress
-
-Com a aplicação rodando (`docker compose up`), em outro terminal execute:
-
-### Abrir Cypress UI
-
-```bash
+Abrir Cypress UI
+bash
+Copiar
+Editar
 npx cypress open
-```
-
-### Executar testes em modo headless
-
-```bash
+Rodar em modo headless
+bash
+Copiar
+Editar
 npx cypress run
-```
-
 Os testes estão localizados em:
-
-```
 cypress/e2e/agendamento.cy.js
-```
 
----
-
-## Estrutura de Pastas
-
-```
+🗂️ Estrutura de Pastas
+bash
+Copiar
+Editar
 .
 ├── backend/                # API Node.js + Express
 ├── frontend/               # Frontend Angular + SSR
-├── cypress/                # Testes automatizados
+├── cypress/                # Testes E2E com Cypress
 │   └── e2e/
 │       └── agendamento.cy.js
-├── docs/                   # Documentação de requisitos, histórias, etc
-├── docker-compose.yml      # Orquestração com Docker
-└── README.md               # Documentação do projeto
+├── docs/                   # Documentação de requisitos, histórias, etc.
+├── docker-compose.yml      # Orquestração de containers
+└── README.md               # Documentação principal do projeto
+📌 Considerações
+Projeto demonstrativo com foco em clareza, organização e testes automatizados.
 
-```
----
+Ideal para avaliações de Qualidade de Software (QA) com foco em integração entre frontend, backend e testes E2E.
 
-## Considerações
+👤 Autor
+José Victor C. L. de Almeida
+🔗 LinkedIn
+💻 GitHub
 
-- Projeto demonstrativo com foco em organização, testes automatizados e clareza de código.
-- Ideal para avaliações de QA com ênfase em testes E2E e integração de sistemas.
-
----
-
-## Autor
-
-José Victor C. L. de Almeida  
-[LinkedIn](https://www.linkedin.com/in/victoralmeidaqa/)  
-[GitHub](https://github.com/Victorios990/agendamentosAPP)
-
----
