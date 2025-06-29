@@ -3,6 +3,8 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import routes from './routes/index.js'
 import { sequelize } from './config/db.js'
+import app from './app.js';
+
 
 dotenv.config()
 const app = express()
