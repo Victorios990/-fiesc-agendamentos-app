@@ -9,7 +9,9 @@
     "preview": "cd frontend && npm run preview"
   },
   "devDependencies": {
+    "jest": "^30.0.3",
     "start-server-and-test": "^2.0.0",
+    "supertest": "^7.1.1",
     "wait-on": "^7.0.1"
   }
 }

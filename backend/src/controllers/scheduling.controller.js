@@ -1,5 +1,5 @@
 import { validationResult } from 'express-validator'
-import * as AgendamentoService from '../Services/AgendamentoService.js'
+import * as AgendamentoService from '../services/schedulingService.js'
 
 export const listar = async (req, res) => {
   const agendamentos = await AgendamentoService.listar()

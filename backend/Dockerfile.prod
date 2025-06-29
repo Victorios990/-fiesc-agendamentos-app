@@ -1,0 +1,13 @@
+# Etapa 1: Build da aplicação (sem dependências de desenvolvimento)
+FROM node:18.20.2 AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --omit=dev
+COPY . .
+
+# Etapa 2: Imagem final, mais enxuta
+FROM node:18.20.2
+WORKDIR /app
+COPY --from=builder /app /app
+EXPOSE 3000
+CMD ["npm", "start"]

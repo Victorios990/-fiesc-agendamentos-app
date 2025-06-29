@@ -1,11 +1,12 @@
 {
   "name": "agendamentos-api",
   "version": "1.0.0",
-  "main": "src/Server.js",
+  "main": "src/server.js",
   "type": "module",
-  "scripts": {
-    "dev": "nodemon src/Server.js"
-  },
+"scripts": {
+  "start": "node src/server.js",
+  "dev": "nodemon src/server.js"
+},
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
