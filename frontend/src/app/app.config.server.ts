@@ -1,18 +1,10 @@
-// frontend/src/app/app.config.server.ts
-
-import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
-import { provideServerRendering } from '@angular/platform-server';
+import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
 
-import { appConfig } from './app.config';
-
-import { serverRoutes } from './app.routes.server';
-
-const serverConfig: ApplicationConfig = {
+export const appConfig = {
   providers: [
-    provideServerRendering(),
-    provideRouter(serverRoutes)
-  ]
+    provideHttpClient(),
+    provideRouter(routes),
+  ],
 };
-
-export const config = mergeApplicationConfig(appConfig, serverConfig);
